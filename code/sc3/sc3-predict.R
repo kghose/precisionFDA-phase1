@@ -38,7 +38,7 @@ xtest <- catboost.load_pool(data = sc3_x_test, label = NULL)
 
 # make predictions
 sc3_pred <- catboost.predict(sc3_model, xtest, prediction_type = "Probability")
-sc3_pred <- ifelse(sc3_pred > 0.5, 1L, 0L)
+sc3_pred <- ifelse(sc3_pred > 0.85, 1L, 0L)
 
 # write results for submission
 sc3_submit <- data.frame("PATIENTID" = sc3_patientid, "SURVIVAL_STATUS" = sc3_pred)

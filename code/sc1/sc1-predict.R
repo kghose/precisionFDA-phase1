@@ -38,7 +38,7 @@ xtest <- as.matrix(convert_num(sc1_x_test))
 
 # make predictions
 sc1_pred <- predict(sc1_model, xtest)
-sc1_pred <- ifelse(sc1_pred > 0.5, 1L, 0L)
+sc1_pred <- ifelse(sc1_pred > 0.95, 1L, 0L)
 
 # write results for submission
 sc1_submit <- data.frame("PATIENTID" = sc1_patientid, "SURVIVAL_STATUS" = sc1_pred)
